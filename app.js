@@ -20,3 +20,6 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#m
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.querySelector('span').textContent=open?'−':'+'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.querySelector('span').textContent='+'}));
 renderProjects();
+
+const animationButton=document.querySelector('.animation-toggle');
+animationButton?.addEventListener('click',()=>{const paused=document.querySelector('.architecture-stage').classList.toggle('paused');animationButton.setAttribute('aria-pressed',String(paused));animationButton.setAttribute('aria-label',paused?'Play architecture animation':'Pause architecture animation');animationButton.firstElementChild.textContent=paused?'▷':'Ⅱ';});
