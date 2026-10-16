@@ -28,3 +28,16 @@ const topButton=document.querySelector('.back-to-top');
 const updateTopButton=()=>{const visible=window.scrollY>300;topButton.classList.toggle('visible',visible);topButton.tabIndex=visible?0:-1;topButton.setAttribute('aria-hidden',String(!visible));};
 window.addEventListener('scroll',updateTopButton,{passive:true});updateTopButton();
 topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}));
+
+const studyAnimationButton=document.querySelector('.study-animation-toggle');
+studyAnimationButton.addEventListener('click',()=>{const paused=document.querySelector('.education-illustration').classList.toggle('paused');studyAnimationButton.setAttribute('aria-pressed',String(paused));studyAnimationButton.setAttribute('aria-label',paused?'Play education animation':'Pause education animation');studyAnimationButton.textContent=paused?'▷':'Ⅱ';});
+
+const envelopeContainer=document.querySelector('#contact-envelope-animation');
+if(envelopeContainer&&window.lottie&&window.CONTACT_ANIMATION){
+ const envelopeReduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const envelopePlayer=lottie.loadAnimation({container:envelopeContainer,renderer:'svg',loop:true,autoplay:!envelopeReduced.matches,animationData:JSON.parse(JSON.stringify(window.CONTACT_ANIMATION)),rendererSettings:{preserveAspectRatio:'xMidYMid meet'}});
+ envelopePlayer.addEventListener('DOMLoaded',()=>{if(envelopeReduced.matches)envelopePlayer.goToAndStop(0,true);});
+ envelopeReduced.addEventListener('change',()=>envelopeReduced.matches?envelopePlayer.pause():envelopePlayer.play());
+ const envelopeObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting&&!envelopeReduced.matches)envelopePlayer.play();else envelopePlayer.pause();}));
+ envelopeObserver.observe(envelopeContainer);
+}
