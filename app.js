@@ -41,3 +41,9 @@ if(envelopeContainer&&window.lottie&&window.CONTACT_ANIMATION){
  const envelopeObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting&&!envelopeReduced.matches)envelopePlayer.play();else envelopePlayer.pause();}));
  envelopeObserver.observe(envelopeContainer);
 }
+
+// Resume available by request, with native dialog keyboard/focus behavior.
+const resumeRequestDialog=document.querySelector('#resume-request-dialog');
+document.querySelector('#get-resume').addEventListener('click',()=>resumeRequestDialog.showModal());
+document.querySelector('.resume-request-close').addEventListener('click',()=>resumeRequestDialog.close());
+resumeRequestDialog.addEventListener('click',event=>{if(event.target===resumeRequestDialog){const box=resumeRequestDialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)resumeRequestDialog.close();}});
