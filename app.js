@@ -23,3 +23,8 @@ renderProjects();
 
 const animationButton=document.querySelector('.animation-toggle');
 animationButton?.addEventListener('click',()=>{const paused=document.querySelector('.architecture-stage').classList.toggle('paused');animationButton.setAttribute('aria-pressed',String(paused));animationButton.setAttribute('aria-label',paused?'Play architecture animation':'Pause architecture animation');animationButton.firstElementChild.textContent=paused?'▷':'Ⅱ';});
+
+const topButton=document.querySelector('.back-to-top');
+const updateTopButton=()=>{const visible=window.scrollY>300;topButton.classList.toggle('visible',visible);topButton.tabIndex=visible?0:-1;topButton.setAttribute('aria-hidden',String(!visible));};
+window.addEventListener('scroll',updateTopButton,{passive:true});updateTopButton();
+topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}));
