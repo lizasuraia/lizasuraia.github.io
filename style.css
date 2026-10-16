@@ -6,3 +6,5 @@
 @media(max-width:390px){.project-grid{grid-template-columns:1fr}.project-card:nth-child(even){padding-top:0}.project-image img,.project-card.landscape .project-image img{height:350px}.project-meta{display:flex}.project-meta>span{margin-top:0}.filters{gap:14px}.contact h2{font-size:36px}.contact-arrow{width:48px;height:48px;font-size:31px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 @media print{.site-header,.resume-actions,footer{display:none}.resume-main{margin:0;max-width:none;padding:0}.resume-main h1{font-size:40px}.resume-main h2{font-size:25px}.resume-section{break-inside:avoid;margin-bottom:20px}body{background:#fff;font-size:11px}.experience-list article{padding:12px 0}.experience-list p{font-size:10px}.job-top{font-size:12px}.resume-intro{margin-bottom:25px;padding-bottom:20px}a{color:#000}.duration{color:#444}}
+
+.about-visual.portrait-visual>img{height:auto;aspect-ratio:640/641;object-fit:contain}
