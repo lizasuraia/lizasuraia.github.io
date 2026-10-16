@@ -47,3 +47,6 @@ const resumeRequestDialog=document.querySelector('#resume-request-dialog');
 document.querySelector('#get-resume').addEventListener('click',()=>resumeRequestDialog.showModal());
 document.querySelector('.resume-request-close').addEventListener('click',()=>resumeRequestDialog.close());
 resumeRequestDialog.addEventListener('click',event=>{if(event.target===resumeRequestDialog){const box=resumeRequestDialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)resumeRequestDialog.close();}});
+
+// Route resume requests to the on-page Contact section.
+document.querySelector('#resume-contact-link').addEventListener('click',()=>{resumeRequestDialog.close();});

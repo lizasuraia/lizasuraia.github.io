@@ -68,3 +68,10 @@ footer.site-footer{border-top:1px solid var(--line);display:flex;align-items:cen
 @media(max-width:1100px){.site-header nav{gap:20px}.site-header nav a{font-size:15px}}
 @media(max-width:700px){.site-header nav a{font-size:18px}.intro-role{font-size:32px}.selected-work-heading .eyebrow{font-size:12px}.selected-work-heading h2{font-size:36px;letter-spacing:-1px}.selected-work-heading{margin-bottom:25px}#resume-request-dialog{padding:45px 24px 30px}#resume-request-dialog h2{font-size:25px}#resume-request-dialog p{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.animated-section-title h2:before,.animated-section-title>span,.animated-gradient-text{animation:none}}
+
+/* Clear About typography and a warm animated signature. */
+.about-copy .about-title{font-family:var(--sans);font-size:clamp(38px,3.6vw,54px);font-weight:600;line-height:1.2;letter-spacing:-1.5px;margin:0 0 30px;color:var(--ink)}.about-copy>p{font-size:18px;line-height:1.85;margin-bottom:20px}.about-copy>p.lead{font-size:20px;line-height:1.8}.intro-name{display:inline;background:linear-gradient(110deg,#a75232 5%,#865339 30%,#617044 55%,#a34a40 80%,#a75232);background-size:250% 100%;background-clip:text;-webkit-background-clip:text;color:#a75232;-webkit-text-fill-color:transparent;animation:signature-color 10s ease-in-out infinite;transition:filter .35s,text-shadow .35s}.intro-name:hover{filter:saturate(1.25);text-shadow:0 5px 22px #a752321c;animation-duration:3s}.intro-footer{justify-content:flex-end}
+@keyframes signature-color{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media(max-width:1000px){.about-copy>p{font-size:16px}.about-copy>p.lead{font-size:18px}}
+@media(max-width:700px){.about-copy .about-title{font-size:38px;letter-spacing:-1px;margin-bottom:24px}.about-copy>p{font-size:16px;line-height:1.85}.about-copy>p.lead{font-size:18px}.intro-footer{justify-content:flex-end}}
+@media(prefers-reduced-motion:reduce){.intro-name{animation:none}.intro-name:hover{filter:none;text-shadow:none}}
