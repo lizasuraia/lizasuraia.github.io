@@ -75,3 +75,10 @@ footer.site-footer{border-top:1px solid var(--line);display:flex;align-items:cen
 @media(max-width:1000px){.about-copy>p{font-size:16px}.about-copy>p.lead{font-size:18px}}
 @media(max-width:700px){.about-copy .about-title{font-size:38px;letter-spacing:-1px;margin-bottom:24px}.about-copy>p{font-size:16px;line-height:1.85}.about-copy>p.lead{font-size:18px}.intro-footer{justify-content:flex-end}}
 @media(prefers-reduced-motion:reduce){.intro-name{animation:none}.intro-name:hover{filter:none;text-shadow:none}}
+/* Compact About layout and a signature effect only on hover. */
+.intro-name{background:none;-webkit-text-fill-color:currentColor;color:#a75232;animation:none;filter:none;text-shadow:none;transition:color .35s,filter .35s,text-shadow .35s}
+@media(hover:hover) and (pointer:fine){.intro-name:hover{background:linear-gradient(110deg,#a75232,#617044,#a34a40,#a75232);background-size:250% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:signature-color 4s ease-in-out infinite;filter:saturate(1.15);text-shadow:0 5px 22px #a752321c}}
+.about .portrait-visual{width:88%;justify-self:center}.about-copy .about-title{font-size:clamp(34px,3.2vw,46px);margin-bottom:25px}.about-copy>p{font-size:16px;line-height:1.8;margin-bottom:18px}.about-copy>p.lead{font-size:18px;line-height:1.8}.about-copy .credentials{margin-top:28px}
+@media(max-width:1000px){.about-copy>p{font-size:15px}.about-copy>p.lead{font-size:17px}}
+@media(max-width:700px){.about .portrait-visual{width:88%;align-self:center}.about-copy .about-title{font-size:34px;margin-bottom:22px}.about-copy>p{font-size:15px;line-height:1.8}.about-copy>p.lead{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.intro-name:hover{animation:none;filter:none;text-shadow:none}}
