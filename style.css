@@ -90,3 +90,8 @@ footer.site-footer{border-top:1px solid var(--line);display:flex;align-items:cen
 @media(prefers-reduced-motion:reduce){.name-yaku .yaku-letter,.name-yaku:before{transition:none!important;transform:none!important}.name-yaku:before{opacity:0}.name-yaku:hover:before,.name-yaku:focus-visible:before{opacity:1}}
 /* Leave room beside the floating back-to-top button. */
 .site-footer .footer-nav{margin-right:52px}
+/* Pointer-following gradient border, matched to the warm architecture palette. */
+.experience-card,.education-card{--card-glow-angle:0deg;--card-glow-opacity:0;isolation:isolate}
+.experience-card:after,.education-card:after{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:2px;pointer-events:none;opacity:var(--card-glow-opacity);background:conic-gradient(from var(--card-glow-angle),transparent 0deg,#a75232 35deg,#777960 65deg,#fff9e8 85deg,transparent 115deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;filter:drop-shadow(0 0 4px #a7523240);transition:opacity .35s}
+.experience-card:focus-within,.education-card:focus-within{--card-glow-opacity:1}
+@media(prefers-reduced-motion:reduce){.experience-card:after,.education-card:after{transition:none}}

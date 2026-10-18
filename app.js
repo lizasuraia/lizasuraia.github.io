@@ -50,3 +50,9 @@ resumeRequestDialog.addEventListener('click',event=>{if(event.target===resumeReq
 
 // Route resume requests to the on-page Contact section.
 document.querySelector('#resume-contact-link').addEventListener('click',()=>{resumeRequestDialog.close();});
+
+// A border highlight follows the pointer around each professional/study card.
+document.querySelectorAll('.experience-card,.education-card').forEach(card=>{
+ card.addEventListener('pointermove',event=>{if(event.pointerType==='touch')return;const rect=card.getBoundingClientRect();const angle=Math.atan2(event.clientY-rect.top-rect.height/2,event.clientX-rect.left-rect.width/2)*180/Math.PI+35;if(!matchMedia('(prefers-reduced-motion: reduce)').matches)card.style.setProperty('--card-glow-angle',angle+'deg');card.style.setProperty('--card-glow-opacity','1');});
+ card.addEventListener('pointerleave',()=>card.style.removeProperty('--card-glow-opacity'));
+});
