@@ -95,3 +95,16 @@ footer.site-footer{border-top:1px solid var(--line);display:flex;align-items:cen
 .experience-card:after,.education-card:after{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:2px;pointer-events:none;opacity:var(--card-glow-opacity);background:conic-gradient(from var(--card-glow-angle),transparent 0deg,#a75232 35deg,#777960 65deg,#fff9e8 85deg,transparent 115deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;filter:drop-shadow(0 0 4px #a7523240);transition:opacity .35s}
 .experience-card:focus-within,.education-card:focus-within{--card-glow-opacity:1}
 @media(prefers-reduced-motion:reduce){.experience-card:after,.education-card:after{transition:none}}
+
+/* A clear, touch-sized menu control for phones and tablets. */
+@media(max-width:900px){
+ .menu-toggle{width:44px;height:44px;min-width:44px;min-height:44px;padding:0;flex-shrink:0;align-items:center;justify-content:center;gap:0;border:1px solid #bdbbac;border-radius:10px;background:#ebe8df;color:var(--ink);touch-action:manipulation;transition:background .2s,border-color .2s,color .2s}
+ .menu-toggle .menu-icon{position:relative;display:block;width:22px;height:18px}
+ .menu-icon i{position:absolute;left:0;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .22s,opacity .16s}
+ .menu-icon i:nth-child(1){top:0}.menu-icon i:nth-child(2){top:8px}.menu-icon i:nth-child(3){top:16px}
+ .menu-toggle[aria-expanded="true"]{color:var(--accent);border-color:var(--accent);background:#a7523210}
+ .menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(1){transform:translateY(8px) rotate(45deg)}
+ .menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(2){opacity:0}
+ .menu-toggle[aria-expanded="true"] .menu-icon i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+}
+@media(prefers-reduced-motion:reduce){.menu-toggle,.menu-icon i{transition:none}}
